@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+            xmlns:v3="http://www.WSAPI.AMS360.com/v3.0">
+  <s:Header>
+    <v3:WSAPISession>
+      <v3:Ticket>KF+HNRQ3QMUbCBLuAh8sHgzaRxxYKeeXTM6RsXFsC/QEbYS+42nDaDsL3aeuty5eGL29h3HcS3M6iWc19c97fdIVb3FXSevHrGp1Yw3hXo7DFQR2pg8Cj1DMlUYFgxSx</v3:Ticket>
+    </v3:WSAPISession>
+  </s:Header>
+
+  <s:Body>
+    <v3:AgencyInfoGet/>
+  </s:Body>
+</s:Envelope>

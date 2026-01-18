@@ -1,0 +1,2567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://www.WSAPI.AMS360.com/v3.0" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.WSAPI.AMS360.com/v3.0" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" targetNamespace="http://www.WSAPI.AMS360.com/v3.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.WSAPI.AMS360.com/v3.0" location="WSAPIServiceContract.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_WSAPIServiceContract" type="i0:WSAPIServiceContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommonSuspenseGetBySuspenseId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseGetBySuspenseId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonSuspenseGetBySuspenseId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonSuspenseGetListByEntityId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseGetListByEntityId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonSuspenseGetListByEntityId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerActivityInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerActivityInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerActivityInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonActivityInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonActivityInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonActivityInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByPhoneNumber">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/SearchByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_SearchByPhoneNumber_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FileChunkBegin">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkBegin" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_FileChunkBegin_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FileChunkSend">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkSend" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_FileChunkSend_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FileChunkEnd">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkEnd" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_FileChunkEnd_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AMS360AgencyUrlGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/AMS360AgencyUrlGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_AMS360AgencyUrlGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="i0:WSAPIServiceContract_Login_OutputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/Logout" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_Logout_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValueListGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ValueListGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_ValueListGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetListByLastNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListByLastNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeGetListByLastNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetListByType">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListByType" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeGetListByType_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EmployeeGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_EmployeeGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDivisionGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDivisionGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDivisionGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDivisionGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDivisionGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDivisionGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDivisionGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDivisionGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLBranchGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLBranchGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLBranchGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLBranchGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLBranchGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLBranchGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLBranchGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLBranchGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLBranchGetListByGLDivisionCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListByGLDivisionCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLBranchGetListByGLDivisionCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDepartmentGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDepartmentGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDepartmentGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDepartmentGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDepartmentGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDepartmentGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDepartmentGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDepartmentGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLDepartmentGetListByGLBranchCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListByGLBranchCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLDepartmentGetListByGLBranchCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLGroupGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLGroupGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLGroupGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLGroupGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLGroupGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLGroupGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLGroupGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLGroupGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GLGroupGetListByGLDepartmentCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListByGLDepartmentCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_GLGroupGetListByGLDepartmentCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BrokerGetListByLastNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetListByLastNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BrokerGetListByLastNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BrokerGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BrokerGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BrokerGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BrokerGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BrokerGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BrokerGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetByShortName">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetByShortName" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetByShortName_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetListByParentCompanyCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByParentCompanyCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetListByParentCompanyCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetListByType">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByType" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetListByType_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CompanyGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerGetById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerGetById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerGetByNumber">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetByNumber" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerGetByNumber_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerGetListByNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetListByNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerGetListByNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerContactGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerContactGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerContactGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerContactGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerContactDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerContactDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerContactUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerContactUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerContactInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerContactInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDependentGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerDependentGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDependentGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerDependentGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDependentInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerDependentInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDependentUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerDependentUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerDependentDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerDependentDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerProfileAnswerGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerProfileAnswerGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerProfileAnswerGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerProfileAnswerGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerProfileAnswerUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerProfileAnswerUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerProfileAnswerDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerProfileAnswerDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerServicePersonnelGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerServicePersonnelGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerServicePersonnelGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerServicePersonnelModifyList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerServicePersonnelModifyList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerServicePersonnelModifyList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlanTypeGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PlanTypeGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlanTypeGetListByCompanyCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetListByCompanyCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PlanTypeGetListByCompanyCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PlanTypeGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PlanTypeGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="S1099GetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/S1099GetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_S1099GetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyServicePersonnelGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyServicePersonnelGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyServicePersonnelGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyServicePersonnelModifyList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyServicePersonnelModifyList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyServicePersonnelModifyList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGetListByCustomerId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGetListByCustomerId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGetListByCustomerNumber">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByCustomerNumber" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGetListByCustomerNumber_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGetListByPolicyNumber">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByPolicyNumber" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGetListByPolicyNumber_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGetListByPolicyNumberAndDate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByPolicyNumberAndDate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGetListByPolicyNumberAndDate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyCorrect">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyCorrect" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyCorrect_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyEndorse">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyEndorse" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyEndorse_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyRenew">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyRenew" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyRenew_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyTransactionPremiumGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyTransactionPremiumGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyTransactionPremiumUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyTransactionPremiumUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyTransactionPremiumDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyTransactionPremiumDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyTransactionPremiumInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyTransactionPremiumInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyTransactionPremiumGetListForPolicy">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumGetListForPolicy" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyTransactionPremiumGetListForPolicy_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyGetRemark">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetRemark" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyGetRemark_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyInsertRemark">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyInsertRemark" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyInsertRemark_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyDeleteRemark">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyDeleteRemark" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyDeleteRemark_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyUpdateRemark">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyUpdateRemark" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyUpdateRemark_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyContactGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyContactGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyContactGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyContactGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyContactInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyContactInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyContactUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyContactUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PolicyContactDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PolicyContactDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorGetListByIsCompany">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListByIsCompany" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorGetListByIsCompany_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorGetListByLastNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListByLastNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorGetListByLastNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorInvoiceGetById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorInvoiceGetById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorInvoiceGetById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VendorInvoiceGetListByVendor">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorInvoiceGetListByVendor" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_VendorInvoiceGetListByVendor_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BankGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetListByAccountType">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListByAccountType" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BankGetListByAccountType_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetListByBankNamePrefix">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListByBankNamePrefix" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BankGetListByBankNamePrefix_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_BankGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimGetById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_ClaimGetById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimGetListByCustomerId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetListByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_ClaimGetListByCustomerId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimGetListByPolicyId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetListByPolicyId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_ClaimGetListByPolicyId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AgencyInfoGet">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/AgencyInfoGet" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_AgencyInfoGet_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalNoteGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PersonalNoteGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalNoteGetListAll">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetListAll" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PersonalNoteGetListAll_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalNoteInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PersonalNoteInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalNoteGetNoteTextById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetNoteTextById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PersonalNoteGetNoteTextById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PersonalNoteUpdateNoteText">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteUpdateNoteText" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_PersonalNoteUpdateNoteText_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerNoteInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerNoteInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerNoteUpdateNoteText">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteUpdateNoteText" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerNoteUpdateNoteText_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerNoteGetNoteTextById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteGetNoteTextById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerNoteGetNoteTextById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonNoteInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonNoteInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonNoteUpdateNoteText">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteUpdateNoteText" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonNoteUpdateNoteText_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonNoteGetNoteTextById">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteGetNoteTextById" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonNoteGetNoteTextById_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LineOfBusinessGetByCode">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetByCode" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_LineOfBusinessGetByCode_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LineOfBusinessGetList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_LineOfBusinessGetList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LineOfBusinessGetAllList">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetAllList" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_LineOfBusinessGetAllList_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSuspenseInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerSuspenseInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSuspenseUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerSuspenseUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSuspenseDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerSuspenseDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSuspenseGetBySuspenseId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseGetBySuspenseId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerSuspenseGetBySuspenseId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerSuspenseGetListByCustomerId">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseGetListByCustomerId" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CustomerSuspenseGetListByCustomerId_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonSuspenseInsert">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseInsert" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonSuspenseInsert_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonSuspenseUpdate">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseUpdate" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonSuspenseUpdate_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CommonSuspenseDelete">
+      <soap:operation soapAction="http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseDelete" style="document" />
+      <wsdl:input>
+        <soap:header message="i0:WSAPIServiceContract_CommonSuspenseDelete_InputMessage_Headers" part="WSAPISession" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WSAPISecurityFaultFault">
+        <soap:fault use="literal" name="WSAPISecurityFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIBusinessFaultFault">
+        <soap:fault use="literal" name="WSAPIBusinessFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="WSAPIGeneralFaultFault">
+        <soap:fault use="literal" name="WSAPIGeneralFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

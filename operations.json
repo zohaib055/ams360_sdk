@@ -1,0 +1,542 @@
+[
+  {
+    "operation": "AMS360AgencyUrlGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/AMS360AgencyUrlGet"
+  },
+  {
+    "operation": "AgencyInfoGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/AgencyInfoGet"
+  },
+  {
+    "operation": "BankGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetByCode"
+  },
+  {
+    "operation": "BankGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListAll"
+  },
+  {
+    "operation": "BankGetListByAccountType",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListByAccountType"
+  },
+  {
+    "operation": "BankGetListByBankNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BankGetListByBankNamePrefix"
+  },
+  {
+    "operation": "BrokerGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetByCode"
+  },
+  {
+    "operation": "BrokerGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetByShortName"
+  },
+  {
+    "operation": "BrokerGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetListAll"
+  },
+  {
+    "operation": "BrokerGetListByLastNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/BrokerGetListByLastNamePrefix"
+  },
+  {
+    "operation": "ClaimGetById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetById"
+  },
+  {
+    "operation": "ClaimGetListByCustomerId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetListByCustomerId"
+  },
+  {
+    "operation": "ClaimGetListByPolicyId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ClaimGetListByPolicyId"
+  },
+  {
+    "operation": "CommonActivityInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonActivityInsert"
+  },
+  {
+    "operation": "CommonNoteGetNoteTextById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteGetNoteTextById"
+  },
+  {
+    "operation": "CommonNoteInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteInsert"
+  },
+  {
+    "operation": "CommonNoteUpdateNoteText",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonNoteUpdateNoteText"
+  },
+  {
+    "operation": "CommonSuspenseDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseDelete"
+  },
+  {
+    "operation": "CommonSuspenseGetBySuspenseId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseGetBySuspenseId"
+  },
+  {
+    "operation": "CommonSuspenseGetListByEntityId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseGetListByEntityId"
+  },
+  {
+    "operation": "CommonSuspenseInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseInsert"
+  },
+  {
+    "operation": "CommonSuspenseUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CommonSuspenseUpdate"
+  },
+  {
+    "operation": "CompanyGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetByCode"
+  },
+  {
+    "operation": "CompanyGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetByShortName"
+  },
+  {
+    "operation": "CompanyGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListAll"
+  },
+  {
+    "operation": "CompanyGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByNamePrefix"
+  },
+  {
+    "operation": "CompanyGetListByParentCompanyCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByParentCompanyCode"
+  },
+  {
+    "operation": "CompanyGetListByType",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CompanyGetListByType"
+  },
+  {
+    "operation": "CustomerActivityInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerActivityInsert"
+  },
+  {
+    "operation": "CustomerContactDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactDelete"
+  },
+  {
+    "operation": "CustomerContactGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactGet"
+  },
+  {
+    "operation": "CustomerContactGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactGetList"
+  },
+  {
+    "operation": "CustomerContactInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactInsert"
+  },
+  {
+    "operation": "CustomerContactUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerContactUpdate"
+  },
+  {
+    "operation": "CustomerDependentDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentDelete"
+  },
+  {
+    "operation": "CustomerDependentGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentGet"
+  },
+  {
+    "operation": "CustomerDependentGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentGetList"
+  },
+  {
+    "operation": "CustomerDependentInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentInsert"
+  },
+  {
+    "operation": "CustomerDependentUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerDependentUpdate"
+  },
+  {
+    "operation": "CustomerGetById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetById"
+  },
+  {
+    "operation": "CustomerGetByNumber",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetByNumber"
+  },
+  {
+    "operation": "CustomerGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerGetListByNamePrefix"
+  },
+  {
+    "operation": "CustomerInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerInsert"
+  },
+  {
+    "operation": "CustomerNoteGetNoteTextById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteGetNoteTextById"
+  },
+  {
+    "operation": "CustomerNoteInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteInsert"
+  },
+  {
+    "operation": "CustomerNoteUpdateNoteText",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerNoteUpdateNoteText"
+  },
+  {
+    "operation": "CustomerProfileAnswerDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerDelete"
+  },
+  {
+    "operation": "CustomerProfileAnswerGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerGet"
+  },
+  {
+    "operation": "CustomerProfileAnswerGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerGetList"
+  },
+  {
+    "operation": "CustomerProfileAnswerUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerProfileAnswerUpdate"
+  },
+  {
+    "operation": "CustomerServicePersonnelGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerServicePersonnelGetList"
+  },
+  {
+    "operation": "CustomerServicePersonnelModifyList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerServicePersonnelModifyList"
+  },
+  {
+    "operation": "CustomerSuspenseDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseDelete"
+  },
+  {
+    "operation": "CustomerSuspenseGetBySuspenseId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseGetBySuspenseId"
+  },
+  {
+    "operation": "CustomerSuspenseGetListByCustomerId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseGetListByCustomerId"
+  },
+  {
+    "operation": "CustomerSuspenseInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseInsert"
+  },
+  {
+    "operation": "CustomerSuspenseUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerSuspenseUpdate"
+  },
+  {
+    "operation": "CustomerUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/CustomerUpdate"
+  },
+  {
+    "operation": "EmployeeGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetByCode"
+  },
+  {
+    "operation": "EmployeeGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetByShortName"
+  },
+  {
+    "operation": "EmployeeGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListAll"
+  },
+  {
+    "operation": "EmployeeGetListByLastNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListByLastNamePrefix"
+  },
+  {
+    "operation": "EmployeeGetListByType",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeGetListByType"
+  },
+  {
+    "operation": "EmployeeInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeInsert"
+  },
+  {
+    "operation": "EmployeeUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/EmployeeUpdate"
+  },
+  {
+    "operation": "FileChunkBegin",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkBegin"
+  },
+  {
+    "operation": "FileChunkEnd",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkEnd"
+  },
+  {
+    "operation": "FileChunkSend",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/FileChunkSend"
+  },
+  {
+    "operation": "GLBranchGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetByCode"
+  },
+  {
+    "operation": "GLBranchGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetByShortName"
+  },
+  {
+    "operation": "GLBranchGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListAll"
+  },
+  {
+    "operation": "GLBranchGetListByGLDivisionCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListByGLDivisionCode"
+  },
+  {
+    "operation": "GLBranchGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLBranchGetListByNamePrefix"
+  },
+  {
+    "operation": "GLDepartmentGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetByCode"
+  },
+  {
+    "operation": "GLDepartmentGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetByShortName"
+  },
+  {
+    "operation": "GLDepartmentGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListAll"
+  },
+  {
+    "operation": "GLDepartmentGetListByGLBranchCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListByGLBranchCode"
+  },
+  {
+    "operation": "GLDepartmentGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDepartmentGetListByNamePrefix"
+  },
+  {
+    "operation": "GLDivisionGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetByCode"
+  },
+  {
+    "operation": "GLDivisionGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetByShortName"
+  },
+  {
+    "operation": "GLDivisionGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetListAll"
+  },
+  {
+    "operation": "GLDivisionGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLDivisionGetListByNamePrefix"
+  },
+  {
+    "operation": "GLGroupGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetByCode"
+  },
+  {
+    "operation": "GLGroupGetByShortName",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetByShortName"
+  },
+  {
+    "operation": "GLGroupGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListAll"
+  },
+  {
+    "operation": "GLGroupGetListByGLDepartmentCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListByGLDepartmentCode"
+  },
+  {
+    "operation": "GLGroupGetListByNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/GLGroupGetListByNamePrefix"
+  },
+  {
+    "operation": "LineOfBusinessGetAllList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetAllList"
+  },
+  {
+    "operation": "LineOfBusinessGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetByCode"
+  },
+  {
+    "operation": "LineOfBusinessGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/LineOfBusinessGetList"
+  },
+  {
+    "operation": "Login",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/Login"
+  },
+  {
+    "operation": "Logout",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/Logout"
+  },
+  {
+    "operation": "PersonalNoteGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetList"
+  },
+  {
+    "operation": "PersonalNoteGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetListAll"
+  },
+  {
+    "operation": "PersonalNoteGetNoteTextById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteGetNoteTextById"
+  },
+  {
+    "operation": "PersonalNoteInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteInsert"
+  },
+  {
+    "operation": "PersonalNoteUpdateNoteText",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PersonalNoteUpdateNoteText"
+  },
+  {
+    "operation": "PlanTypeGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetByCode"
+  },
+  {
+    "operation": "PlanTypeGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetListAll"
+  },
+  {
+    "operation": "PlanTypeGetListByCompanyCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PlanTypeGetListByCompanyCode"
+  },
+  {
+    "operation": "PolicyContactDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactDelete"
+  },
+  {
+    "operation": "PolicyContactGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactGet"
+  },
+  {
+    "operation": "PolicyContactGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactGetList"
+  },
+  {
+    "operation": "PolicyContactInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactInsert"
+  },
+  {
+    "operation": "PolicyContactUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyContactUpdate"
+  },
+  {
+    "operation": "PolicyCorrect",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyCorrect"
+  },
+  {
+    "operation": "PolicyDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyDelete"
+  },
+  {
+    "operation": "PolicyDeleteRemark",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyDeleteRemark"
+  },
+  {
+    "operation": "PolicyEndorse",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyEndorse"
+  },
+  {
+    "operation": "PolicyGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGet"
+  },
+  {
+    "operation": "PolicyGetListByCustomerId",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByCustomerId"
+  },
+  {
+    "operation": "PolicyGetListByCustomerNumber",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByCustomerNumber"
+  },
+  {
+    "operation": "PolicyGetListByPolicyNumber",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByPolicyNumber"
+  },
+  {
+    "operation": "PolicyGetListByPolicyNumberAndDate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetListByPolicyNumberAndDate"
+  },
+  {
+    "operation": "PolicyGetRemark",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyGetRemark"
+  },
+  {
+    "operation": "PolicyInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyInsert"
+  },
+  {
+    "operation": "PolicyInsertRemark",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyInsertRemark"
+  },
+  {
+    "operation": "PolicyRenew",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyRenew"
+  },
+  {
+    "operation": "PolicyServicePersonnelGetList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyServicePersonnelGetList"
+  },
+  {
+    "operation": "PolicyServicePersonnelModifyList",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyServicePersonnelModifyList"
+  },
+  {
+    "operation": "PolicyTransactionPremiumDelete",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumDelete"
+  },
+  {
+    "operation": "PolicyTransactionPremiumGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumGet"
+  },
+  {
+    "operation": "PolicyTransactionPremiumGetListForPolicy",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumGetListForPolicy"
+  },
+  {
+    "operation": "PolicyTransactionPremiumInsert",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumInsert"
+  },
+  {
+    "operation": "PolicyTransactionPremiumUpdate",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyTransactionPremiumUpdate"
+  },
+  {
+    "operation": "PolicyUpdateRemark",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/PolicyUpdateRemark"
+  },
+  {
+    "operation": "S1099GetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/S1099GetListAll"
+  },
+  {
+    "operation": "SearchByPhoneNumber",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/SearchByPhoneNumber"
+  },
+  {
+    "operation": "ValueListGet",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/ValueListGet"
+  },
+  {
+    "operation": "VendorGetByCode",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetByCode"
+  },
+  {
+    "operation": "VendorGetListAll",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListAll"
+  },
+  {
+    "operation": "VendorGetListByIsCompany",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListByIsCompany"
+  },
+  {
+    "operation": "VendorGetListByLastNamePrefix",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorGetListByLastNamePrefix"
+  },
+  {
+    "operation": "VendorInvoiceGetById",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorInvoiceGetById"
+  },
+  {
+    "operation": "VendorInvoiceGetListByVendor",
+    "soapAction": "http://www.WSAPI.AMS360.com/v3.0/WSAPIServiceContract/VendorInvoiceGetListByVendor"
+  }
+]
