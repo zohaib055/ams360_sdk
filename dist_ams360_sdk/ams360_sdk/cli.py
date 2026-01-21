@@ -5,6 +5,7 @@ import sys
 
 from .client import AMS360Client
 from .generated import Generated
+from .settings import AMS360Settings
 
 def main():
     p = argparse.ArgumentParser(prog="ams360_sdk.cli")
@@ -18,10 +19,12 @@ def main():
 
     wsdl_path = os.path.abspath(args.wsdl)
     if not os.path.exists(wsdl_path):
-        print("❌ WSDL not found:", wsdl_path)
+        print("WSDL not found:", wsdl_path)
         sys.exit(1)
 
-    ams = AMS360Client.from_env(wsdl_path=wsdl_path)
+    settings = AMS360Settings.from_env()
+    auto_login = bool(args.login or args.call)
+    ams = AMS360Client.from_settings(wsdl_path=wsdl_path, settings=settings, auto_login=auto_login)
     gen = Generated(ams)
 
     if args.list_ops:
@@ -43,15 +46,11 @@ def main():
         return
 
     if args.login or args.call:
-        agency_no = os.getenv("AMS360_AGENCY_NO", "")
-        login_id = os.getenv("AMS360_LOGIN_ID", "")
-        password = os.getenv("AMS360_PASSWORD", "")
-        employee_code = os.getenv("AMS360_EMPLOYEE_CODE", "")
-        if not agency_no or not login_id or not password:
-            print("❌ Missing env vars: AMS360_AGENCY_NO, AMS360_LOGIN_ID, AMS360_PASSWORD")
+        if not settings.ticket and not settings.has_credentials():
+            print("Missing env vars: AMS360_AGENCY_NO, AMS360_LOGIN_ID, AMS360_PASSWORD")
             sys.exit(1)
 
-        ticket = ams.login(agency_no=agency_no, login_id=login_id, password=password, employee_code=employee_code)
+        ticket = ams.ensure_ticket()
         print("Ticket:", ticket)
 
     if args.call:

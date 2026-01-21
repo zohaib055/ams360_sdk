@@ -280,9 +280,10 @@ def generate_sdk(
 
     write_text(pkg_dir / "__init__.py",
                "from .client import AMS360Client\n"
+               "from .settings import AMS360Settings\n"
                "from .generated import Generated\n"
                "from . import models\n"
-               "__all__ = ['AMS360Client', 'Generated', 'models']\n")
+               "__all__ = ['AMS360Client', 'AMS360Settings', 'Generated', 'models']\n")
 
     write_text(pkg_dir / "errors.py", """\
 class AMS360Error(Exception):
@@ -293,6 +294,57 @@ class AMS360AuthError(AMS360Error):
 
 class AMS360SoapError(AMS360Error):
     pass
+""")
+
+    write_text(pkg_dir / "settings.py", """\
+from __future__ import annotations
+
+import os
+from dataclasses import dataclass
+from typing import Optional
+
+
+def _env_int(name: str, default: int) -> int:
+    raw = os.getenv(name)
+    if raw is None or raw == "":
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        return default
+
+
+@dataclass
+class AMS360Settings:
+    agency_no: str
+    login_id: str
+    password: str
+    employee_code: str = ""
+    endpoint_url: str = "https://wsapi.ams360.com/v3/WSAPIService.svc"
+    verify_tls: bool = True
+    timeout: int = 60
+    operation_timeout: int = 120
+    ticket: Optional[str] = None
+
+    @classmethod
+    def from_env(cls) -> "AMS360Settings":
+        return cls(
+            agency_no=os.getenv("AMS360_AGENCY_NO", ""),
+            login_id=os.getenv("AMS360_LOGIN_ID", ""),
+            password=os.getenv("AMS360_PASSWORD", ""),
+            employee_code=os.getenv("AMS360_EMPLOYEE_CODE", ""),
+            endpoint_url=os.getenv(
+                "AMS360_ENDPOINT_URL",
+                "https://wsapi.ams360.com/v3/WSAPIService.svc",
+            ),
+            verify_tls=os.getenv("AMS360_VERIFY_TLS", "true").lower() != "false",
+            timeout=_env_int("AMS360_TIMEOUT", 60),
+            operation_timeout=_env_int("AMS360_OPERATION_TIMEOUT", 120),
+            ticket=(os.getenv("AMS360_TICKET", "") or None),
+        )
+
+    def has_credentials(self) -> bool:
+        return bool(self.agency_no and self.login_id and self.password)
 """)
 
     model_lines = []
@@ -337,8 +389,8 @@ class AMS360SoapError(AMS360Error):
     write_text(pkg_dir / "models.py", "".join(model_lines))
 
     write_text(pkg_dir / "client.py", f"""\
-import os
 import re
+from pathlib import Path
 from typing import Any, Dict, Optional
 from xml.etree import ElementTree as ET
 from xml.sax.saxutils import escape
@@ -351,19 +403,23 @@ from zeep.exceptions import Fault
 from zeep.helpers import serialize_object
 
 from .errors import AMS360AuthError, AMS360SoapError
+from .settings import AMS360Settings
 
 NS_DC = "http://www.WSAPI.AMS360.com/v3.0/DataContract"
 
 class AMS360Client:
     def __init__(
         self,
-        wsdl_path: str,
+        wsdl_path: Optional[str] = None,
         endpoint_url: str = "https://wsapi.ams360.com/v3/WSAPIService.svc",
         timeout: int = 60,
         operation_timeout: int = 120,
         verify_tls: bool = True,
         debug: bool = False,
+        settings: Optional[AMS360Settings] = None,
+        auto_login: bool = True,
     ) -> None:
+        wsdl_path = self._resolve_wsdl_path(wsdl_path)
         self.history = HistoryPlugin()
         session = requests.Session()
         session.verify = verify_tls
@@ -376,25 +432,120 @@ class AMS360Client:
         self.last_login_response: Optional[str] = None
 
         transport = Transport(session=session, timeout=timeout, operation_timeout=operation_timeout)
-        settings = Settings(strict=False, xml_huge_tree=True)
+        zeep_settings = Settings(strict=False, xml_huge_tree=True)
 
-        self.client = Client(wsdl=wsdl_path, transport=transport, settings=settings, plugins=[self.history])
+        self.client = Client(wsdl=wsdl_path, transport=transport, settings=zeep_settings, plugins=[self.history])
 
         for service in self.client.wsdl.services.values():
             for port in service.ports.values():
                 port.binding_options["address"] = endpoint_url
 
         self.ticket: Optional[str] = None
+        self.settings: Optional[AMS360Settings] = None
+        self.auto_login = auto_login
+        if settings is not None:
+            self.configure_auth(settings, auto_login=auto_login)
 
     @staticmethod
-    def from_env(wsdl_path: str) -> "AMS360Client":
-        endpoint = os.getenv("AMS360_ENDPOINT_URL", "https://wsapi.ams360.com/v3/WSAPIService.svc")
-        verify_tls = os.getenv("AMS360_VERIFY_TLS", "true").lower() != "false"
-        return AMS360Client(wsdl_path=wsdl_path, endpoint_url=endpoint, verify_tls=verify_tls)
+    def from_env(
+        wsdl_path: Optional[str] = None,
+        debug: bool = False,
+        auto_login: bool = True,
+    ) -> "AMS360Client":
+        settings = AMS360Settings.from_env()
+        return AMS360Client.from_settings(
+            wsdl_path=wsdl_path,
+            settings=settings,
+            debug=debug,
+            auto_login=auto_login,
+        )
+
+    @staticmethod
+    def from_settings(
+        settings: AMS360Settings,
+        wsdl_path: Optional[str] = None,
+        debug: bool = False,
+        auto_login: bool = True,
+    ) -> "AMS360Client":
+        return AMS360Client(
+            wsdl_path=wsdl_path,
+            endpoint_url=settings.endpoint_url,
+            timeout=settings.timeout,
+            operation_timeout=settings.operation_timeout,
+            verify_tls=settings.verify_tls,
+            debug=debug,
+            settings=settings,
+            auto_login=auto_login,
+        )
+
+    @staticmethod
+    def _resolve_wsdl_path(wsdl_path: Optional[str]) -> str:
+        if wsdl_path:
+            return str(wsdl_path)
+        pkg_dir = Path(__file__).resolve().parent
+        candidates = [
+            pkg_dir.parent / "merged.wsdl",
+            pkg_dir / "merged.wsdl",
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                return str(candidate)
+        raise FileNotFoundError(
+            "merged.wsdl not found. Provide wsdl_path or place merged.wsdl "
+            "next to the package folder."
+        )
 
     def _debug(self, message: str) -> None:
         if self.debug:
             print(message)
+
+    def configure_auth(self, settings: AMS360Settings, auto_login: bool = True) -> None:
+        self.settings = settings
+        self.auto_login = auto_login
+        if settings.ticket:
+            self.set_ticket(settings.ticket)
+        elif auto_login and settings.has_credentials():
+            self.login(
+                agency_no=settings.agency_no,
+                login_id=settings.login_id,
+                password=settings.password,
+                employee_code=settings.employee_code,
+            )
+
+    def set_ticket(self, ticket: str) -> None:
+        ticket = (ticket or "").strip()
+        if not ticket:
+            raise AMS360AuthError("Ticket cannot be empty.")
+        self.ticket = ticket
+        self.client.set_default_soapheaders({{"WSAPISession": {{"Ticket": self.ticket}}}})
+        if self.settings is not None:
+            self.settings.ticket = ticket
+
+    def ensure_ticket(self) -> str:
+        if self.ticket:
+            return self.ticket
+        if not self.settings:
+            raise AMS360AuthError("Missing settings or ticket. Configure AMS360Settings first.")
+        if not self.settings.has_credentials():
+            raise AMS360AuthError("Missing credentials. Provide agency_no, login_id, and password.")
+        return self.login(
+            agency_no=self.settings.agency_no,
+            login_id=self.settings.login_id,
+            password=self.settings.password,
+            employee_code=self.settings.employee_code,
+        )
+
+    def _maybe_login(self) -> None:
+        if self.ticket or not self.auto_login or not self.settings:
+            return
+        if not self.settings.has_credentials():
+            raise AMS360AuthError("Missing credentials. Provide agency_no, login_id, and password.")
+        self.login(
+            agency_no=self.settings.agency_no,
+            login_id=self.settings.login_id,
+            password=self.settings.password,
+            employee_code=self.settings.employee_code,
+        )
 
     def login(self, agency_no: str, login_id: str, password: str, employee_code: str = "") -> str:
         agency_no = agency_no or ""
@@ -467,9 +618,7 @@ class AMS360Client:
             if len(snippet) > 2000:
                 snippet = snippet[:2000] + "... (truncated)"
             raise AMS360AuthError(f"Login failed; Ticket not found. SOAP response: {{snippet}}")
-        self.ticket = str(ticket)
-
-        self.client.set_default_soapheaders({{"WSAPISession": {{"Ticket": self.ticket}}}})
+        self.set_ticket(str(ticket))
         return self.ticket
 
     def last_login_soap(self) -> Dict[str, str]:
@@ -479,6 +628,7 @@ class AMS360Client:
         }}
 
     def call(self, op_name: str, **kwargs: Any) -> Any:
+        self._maybe_login()
         fn = getattr(self.client.service, op_name, None)
         if not fn:
             raise AttributeError(f"Operation '{{op_name}}' not found in WSDL")
@@ -575,6 +725,7 @@ import sys
 
 from .client import AMS360Client
 from .generated import Generated
+from .settings import AMS360Settings
 
 def main():
     p = argparse.ArgumentParser(prog="ams360_sdk.cli")
@@ -588,10 +739,12 @@ def main():
 
     wsdl_path = os.path.abspath(args.wsdl)
     if not os.path.exists(wsdl_path):
-        print("❌ WSDL not found:", wsdl_path)
+        print("WSDL not found:", wsdl_path)
         sys.exit(1)
 
-    ams = AMS360Client.from_env(wsdl_path=wsdl_path)
+    settings = AMS360Settings.from_env()
+    auto_login = bool(args.login or args.call)
+    ams = AMS360Client.from_settings(wsdl_path=wsdl_path, settings=settings, auto_login=auto_login)
     gen = Generated(ams)
 
     if args.list_ops:
@@ -613,15 +766,11 @@ def main():
         return
 
     if args.login or args.call:
-        agency_no = os.getenv("AMS360_AGENCY_NO", "")
-        login_id = os.getenv("AMS360_LOGIN_ID", "")
-        password = os.getenv("AMS360_PASSWORD", "")
-        employee_code = os.getenv("AMS360_EMPLOYEE_CODE", "")
-        if not agency_no or not login_id or not password:
-            print("❌ Missing env vars: AMS360_AGENCY_NO, AMS360_LOGIN_ID, AMS360_PASSWORD")
+        if not settings.ticket and not settings.has_credentials():
+            print("Missing env vars: AMS360_AGENCY_NO, AMS360_LOGIN_ID, AMS360_PASSWORD")
             sys.exit(1)
 
-        ticket = ams.login(agency_no=agency_no, login_id=login_id, password=password, employee_code=employee_code)
+        ticket = ams.ensure_ticket()
         print("Ticket:", ticket)
 
     if args.call:
@@ -650,9 +799,11 @@ This SDK was generated from your local WSDL files.
 - `{merged_wsdl.name}`: merged WSDL used by Zeep (offline)
 - `operations.json`: operation -> soapAction map
 - `ams360_sdk/`: python package
-  - `client.py`: login + call + call_json
+  - `client.py`: auth + call + call_json
   - `generated.py`: one method per operation
   - `cli.py`: list operations, login, call any operation
+- `demos/`: one demo script per operation
+- `INTEGRATION_README.md`: settings, auth flow, payload/response examples
 
 ## Install deps
 ```bash
@@ -665,7 +816,11 @@ AMS360_AGENCY_NO=8880006-1
 AMS360_LOGIN_ID=testuser
 AMS360_PASSWORD=...
 AMS360_EMPLOYEE_CODE=   # optional if "Specific Employee = WSAPI" mapping is set
+AMS360_TICKET=          # optional: reuse an existing ticket
 AMS360_ENDPOINT_URL=https://wsapi.ams360.com/v3/WSAPIService.svc
+AMS360_VERIFY_TLS=true
+AMS360_TIMEOUT=60
+AMS360_OPERATION_TIMEOUT=120
 ```
 
 ## Run CLI (list operations)
@@ -678,7 +833,393 @@ python -m ams360_sdk.cli --list-ops
 ```bash
 python -m ams360_sdk.cli --login --call AgencyInfoGet --json --payload "{{}}"
 ```
+
+## WSDL handling
+`AMS360Client` automatically looks for `merged.wsdl` next to the `ams360_sdk` package
+(the parent folder of `ams360_sdk`). Pass `wsdl_path` only if you want to override it.
+
+## Demos
+Each script in `demos/` runs a single operation and prints JSON output.
+For operations that require a request, provide JSON payload via:
+
+- `AMS360_DEMO_PAYLOAD_JSON` (JSON string), or
+- `AMS360_DEMO_PAYLOAD_FILE` (path to a JSON file), or
+- a file next to the demo script with the same name and `.json` extension.
+
+Example:
+```bash
+python demos/customer_get_list_by_name_prefix.py
+```
+
+Login demo (prints the ticket as JSON):
+```bash
+python demos/login_demo.py
+```
 """)
+
+    write_text(out_dir / "INTEGRATION_README.md", """\
+# AMS360 SDK Integration Guide
+
+This guide shows how to configure authentication, use the SDK in a production-style integration,
+and view JSON payload/response examples for common customer methods.
+
+## Settings and setup
+
+The SDK uses `AMS360Settings` to hold all authentication settings. You can provide a ticket
+directly or supply credentials so the SDK logs in and reuses the ticket for all calls.
+
+```python
+from ams360_sdk import AMS360Client, AMS360Settings, Generated
+
+settings = AMS360Settings(
+    agency_no="8880006-1",
+    login_id="myuser",
+    password="mypassword",
+    employee_code="",
+    endpoint_url="https://wsapi.ams360.com/v3/WSAPIService.svc",
+    verify_tls=True,
+    timeout=60,
+    operation_timeout=120,
+    ticket=None,  # optional: reuse an existing ticket
+)
+
+client = AMS360Client.from_settings(
+    settings=settings,
+    auto_login=True,
+)
+gen = Generated(client)
+```
+
+You can also load settings from environment variables:
+
+```python
+settings = AMS360Settings.from_env()
+```
+
+Environment variables supported:
+
+- `AMS360_AGENCY_NO`
+- `AMS360_LOGIN_ID`
+- `AMS360_PASSWORD`
+- `AMS360_EMPLOYEE_CODE` (optional)
+- `AMS360_TICKET` (optional, skip login if already available)
+- `AMS360_ENDPOINT_URL`
+- `AMS360_VERIFY_TLS` (true/false)
+- `AMS360_TIMEOUT`
+- `AMS360_OPERATION_TIMEOUT`
+
+## Authentication flow
+
+1) Provide a ticket (recommended if your app caches it)
+
+```python
+settings = AMS360Settings.from_env()
+settings.ticket = "existing-ticket"
+client = AMS360Client.from_settings(settings=settings, auto_login=False)
+```
+
+2) Provide credentials (SDK logs in and stores the ticket internally)
+
+```python
+settings = AMS360Settings.from_env()
+client = AMS360Client.from_settings(settings=settings, auto_login=True)
+client.ensure_ticket()
+```
+
+## JSON responses
+
+Use the `*_json` method variants to get Python dicts/lists (JSON-ready).
+If you need a JSON string, call `json.dumps(result)`.
+
+## WSDL handling
+
+`AMS360Client` automatically locates `merged.wsdl` next to the `ams360_sdk` package
+(the parent folder of `ams360_sdk`). Pass `wsdl_path` only if you need to override it.
+
+## Demos
+
+The `demos/` folder contains one script per operation. Each script prints JSON output.
+For request-based operations, supply a JSON payload using:
+
+- `AMS360_DEMO_PAYLOAD_JSON` (JSON string), or
+- `AMS360_DEMO_PAYLOAD_FILE` (path to a JSON file), or
+- a `.json` file next to the demo script with the same name.
+
+Example:
+```bash
+python demos/customer_get_list_by_name_prefix.py
+```
+
+Login demo (prints the ticket as JSON):
+```bash
+python demos/login_demo.py
+```
+
+## Method payload and response examples
+
+Below are common customer methods. For the full list, see `operations.json` or
+`ams360_sdk/generated.py`. All methods follow the same pattern: pass a request model
+from `ams360_sdk/models.py` and call the `*_json` method.
+
+### Customer list by name prefix (CustomerGetListByNamePrefix)
+
+Payload:
+
+```python
+from ams360_sdk import models
+
+request = models.CustomerGetListByNamePrefixRequest(NamePrefix="A")
+result = gen.customer_get_list_by_name_prefix_json(request=request)
+```
+
+Response (example):
+
+```json
+{
+  "CustomerGetListByNamePrefixResult": {
+    "CustomerInfoList": {
+      "CustomerInfo": [
+        {
+          "CustomerId": "4491edb1-3d68-468b-8adc-0d41c04a25e9",
+          "CustomerNumber": 5544,
+          "FirstName": "Kent",
+          "LastName": "Anthony",
+          "FirmName": null,
+          "IsActive": false
+        }
+      ]
+    }
+  }
+}
+```
+
+### Customer lookup by number (CustomerGetByNumber)
+
+Payload:
+
+```python
+request = models.CustomerGetByNumberRequest(CustomerNumber="5544")
+result = gen.customer_get_by_number_json(request=request)
+```
+
+Response (example):
+
+```json
+{
+  "CustomerGetByNumberResult": {
+    "Customer": {
+      "CustomerId": "4491edb1-3d68-468b-8adc-0d41c04a25e9",
+      "CustomerNumber": 5544,
+      "FirstName": "Kent",
+      "LastName": "Anthony"
+    }
+  }
+}
+```
+
+### Customer search by phone (SearchByPhoneNumber)
+
+Payload:
+
+```python
+request = models.SearchByPhoneNumberRequest(PhoneNumber="5551234567")
+result = gen.search_by_phone_number_json(request=request)
+```
+
+Response (example):
+
+```json
+{
+  "SearchByPhoneNumberResult": {
+    "SearchResults": {
+      "SearchResult": [
+        {
+          "EntityId": "4491edb1-3d68-468b-8adc-0d41c04a25e9",
+          "EntityType": "Customer",
+          "DisplayName": "Kent Anthony"
+        }
+      ]
+    }
+  }
+}
+```
+""")
+
+    demo_dir = out_dir / "demos"
+    demo_dir.mkdir(parents=True, exist_ok=True)
+
+    write_text(demo_dir / "_common.py", """\
+import json
+import os
+import re
+import sys
+from pathlib import Path
+from typing import Optional
+
+SDK_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SDK_DIR))
+
+from ams360_sdk import AMS360Client, AMS360Settings, Generated, models
+from ams360_sdk.errors import AMS360AuthError
+
+def _load_json(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Invalid JSON in {path}: {exc}")
+
+def load_payload(payload_path: Path, field_names: list[str]) -> dict:
+    env_json = os.getenv("AMS360_DEMO_PAYLOAD_JSON", "")
+    if env_json:
+        try:
+            return json.loads(env_json)
+        except json.JSONDecodeError as exc:
+            raise SystemExit(f"Invalid AMS360_DEMO_PAYLOAD_JSON: {exc}")
+
+    payload_file = os.getenv("AMS360_DEMO_PAYLOAD_FILE", "")
+    if payload_file:
+        return _load_json(Path(payload_file))
+
+    if payload_path.exists():
+        return _load_json(payload_path)
+
+    if field_names:
+        fields = ", ".join(field_names)
+        raise SystemExit(
+            "Missing payload JSON. Provide AMS360_DEMO_PAYLOAD_JSON "
+            f"or create {payload_path} with fields: {fields}"
+        )
+
+    return {}
+
+def _mask_secret(xml_text: str, tag: str) -> str:
+    if not xml_text:
+        return xml_text
+    pattern = rf"(<{tag}>)(.*?)(</{tag}>)"
+    return re.sub(pattern, r"\\1***\\3", xml_text, flags=re.DOTALL)
+
+def _write_login_soap(client: AMS360Client) -> Optional[str]:
+    soap = client.last_login_soap()
+    if not soap.get("request") and not soap.get("response"):
+        return None
+    out_dir = Path(__file__).resolve().parent
+    req_path = out_dir / "login_request.xml"
+    resp_path = out_dir / "login_response.xml"
+    request_xml = _mask_secret(soap.get("request", ""), "a:Password")
+    response_xml = _mask_secret(soap.get("response", ""), "Ticket")
+    req_path.write_text(request_xml, encoding="utf-8")
+    resp_path.write_text(response_xml, encoding="utf-8")
+    return str(out_dir)
+
+def get_gen() -> Generated:
+    client = AMS360Client.from_env(auto_login=False)
+    settings = client.settings or AMS360Settings.from_env()
+    if not settings.ticket and not settings.has_credentials():
+        raise SystemExit(
+            "Missing credentials. Set AMS360_AGENCY_NO, AMS360_LOGIN_ID, "
+            "AMS360_PASSWORD or AMS360_TICKET."
+        )
+    try:
+        if client.settings is None:
+            client.configure_auth(settings, auto_login=True)
+        else:
+            client.configure_auth(client.settings, auto_login=True)
+        client.ensure_ticket()
+    except AMS360AuthError as exc:
+        location = _write_login_soap(client)
+        detail = f" Wrote login SOAP to {location}." if location else ""
+        raise SystemExit(f"Login failed: {exc}.{detail}")
+    return Generated(client)
+
+def run_demo(
+    operation: str,
+    method_name: str,
+    request_model: Optional[str],
+    field_names: list[str],
+    payload_path: Path,
+) -> None:
+    gen = get_gen()
+    if request_model:
+        payload = load_payload(payload_path, field_names)
+        model_cls = getattr(models, request_model, None)
+        if model_cls:
+            request = model_cls(**payload)
+        else:
+            request = payload
+        result = getattr(gen, f"{method_name}_json")(request=request)
+    else:
+        result = getattr(gen, f"{method_name}_json")()
+
+    print(json.dumps(result, indent=2))
+""")
+
+    write_text(demo_dir / "login_demo.py", """\
+import json
+import sys
+from pathlib import Path
+
+SDK_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SDK_DIR))
+
+from ams360_sdk import AMS360Client, AMS360Settings
+from ams360_sdk.errors import AMS360AuthError
+
+def main() -> None:
+    client = AMS360Client.from_env(auto_login=False)
+    settings = client.settings or AMS360Settings.from_env()
+    if not settings.ticket and not settings.has_credentials():
+        raise SystemExit(
+            "Missing credentials. Set AMS360_AGENCY_NO, AMS360_LOGIN_ID, "
+            "AMS360_PASSWORD or AMS360_TICKET."
+        )
+
+    try:
+        if client.settings is None:
+            client.configure_auth(settings, auto_login=True)
+        else:
+            client.configure_auth(client.settings, auto_login=True)
+        ticket = client.ensure_ticket()
+    except AMS360AuthError as exc:
+        raise SystemExit(f"Login failed: {exc}")
+
+    print(json.dumps({"ticket": ticket}, indent=2))
+
+if __name__ == "__main__":
+    main()
+""")
+
+    used_demo_names: set[str] = set()
+    for op in operations:
+        method_name = to_snake(op)
+        demo_name = method_name
+        if demo_name in used_demo_names:
+            i = 2
+            while f"{demo_name}_{i}" in used_demo_names:
+                i += 1
+            demo_name = f"{demo_name}_{i}"
+        used_demo_names.add(demo_name)
+
+        req_model = op_request_types.get(op)
+        field_names = []
+        if req_model:
+            fields = request_models.get(req_model, [])
+            field_names = [field["py_name"] for field in fields]
+
+        demo_content = f"""\
+from pathlib import Path
+from _common import run_demo
+
+OPERATION = {op!r}
+METHOD = {method_name!r}
+REQUEST_MODEL = {req_model!r}
+FIELD_NAMES = {field_names!r}
+
+if __name__ == "__main__":
+    run_demo(OPERATION, METHOD, REQUEST_MODEL, FIELD_NAMES, Path(__file__).with_suffix(".json"))
+"""
+        write_text(demo_dir / f"{demo_name}.py", demo_content)
 
     return out_dir
 
@@ -718,7 +1259,7 @@ def main():
     print(f"OK: Zeep loaded operations: {len(ops)}")
 
     if len(ops) == 0:
-        print("❌ Still 0 ops. The WSDL likely lacks a service/port bound to a binding after merge.")
+        print("ERROR: Still 0 ops. The WSDL likely lacks a service/port bound to a binding after merge.")
         sys.exit(1)
 
     actions = extract_soap_actions(merged)

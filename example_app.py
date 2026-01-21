@@ -1,65 +1,37 @@
 import json
 import os
 import sys
-from xml.etree import ElementTree as ET
 from pathlib import Path
 
 SDK_DIR = Path(__file__).resolve().parent / "dist_ams360_sdk"
 sys.path.insert(0, str(SDK_DIR))
 
-from ams360_sdk import AMS360Client, Generated, models
+from ams360_sdk import AMS360Client, AMS360Settings, Generated, models
 from ams360_sdk.errors import AMS360AuthError
 
 
 def main() -> None:
-    # TODO: Replace these with your AMS360 credentials or keep login.xml up to date.
-    agency_no = ""
-    login_id = ""
-    password = ""
-    employee_code = ""
-
-    wsdl_path = SDK_DIR / "merged.wsdl"
-    if not wsdl_path.exists():
-        print(f"Missing WSDL: {wsdl_path}")
-        sys.exit(1)
-
-    login_xml_path = Path(__file__).resolve().parent / "login.xml"
-    if login_xml_path.exists():
-        xml_root = ET.parse(login_xml_path).getroot()
-        for node in xml_root.iter():
-            if node.tag.endswith("AgencyNo") and node.text:
-                agency_no = node.text.strip()
-            elif node.tag.endswith("LoginId") and node.text:
-                login_id = node.text.strip()
-            elif node.tag.endswith("Password") and node.text:
-                password = node.text.strip()
-            elif node.tag.endswith("EmployeeCode") and node.text:
-                employee_code = node.text.strip()
-
-    if not agency_no or not login_id or not password:
-        print("Missing credentials. Update login.xml or set the values in example_app.py.")
-        sys.exit(1)
-
-    ams = AMS360Client(wsdl_path=str(wsdl_path), debug=True)
-    try:
-        ticket = ams.login(
-            agency_no=agency_no,
-            login_id=login_id,
-            password=password,
-            employee_code=employee_code,
+    settings = AMS360Settings.from_env()
+    if not settings.ticket and not settings.has_credentials():
+        print(
+            "Missing credentials. Set AMS360_AGENCY_NO, AMS360_LOGIN_ID, "
+            "AMS360_PASSWORD or AMS360_TICKET."
         )
-    except AMS360AuthError as exc:
-        soap = ams.last_login_soap()
-        req_path = Path(__file__).resolve().parent / "login_request.xml"
-        resp_path = Path(__file__).resolve().parent / "login_response.xml"
-        req_path.write_text(soap.get("request", ""), encoding="utf-8")
-        resp_path.write_text(soap.get("response", ""), encoding="utf-8")
-        print(f"Login failed: {exc}")
-        print(f"Wrote request/response to {req_path} and {resp_path}")
-        raise
+        sys.exit(1)
 
-    token_path = Path(__file__).resolve().parent / "ams360_ticket.txt"
-    token_path.write_text(ticket, encoding="utf-8")
+    try:
+        ams = AMS360Client.from_settings(
+            settings=settings,
+            debug=True,
+            auto_login=True,
+        )
+        ams.ensure_ticket()
+    except FileNotFoundError as exc:
+        print(f"WSDL not found: {exc}")
+        sys.exit(1)
+    except AMS360AuthError as exc:
+        print(f"Login failed: {exc}")
+        raise
 
     gen = Generated(ams)
 
